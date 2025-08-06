@@ -34,12 +34,17 @@ public class AccountTest {
 		account2.deposit(10000);
 		System.out.println("ÀÜ¾×  = " + account2.getBalance() + "¿ø");
 		
-		System.out.println("10000¿ø Ãâ±Ý");
-		account2.withdraw(10000);
-		System.out.println("ÀÜ¾×  = " + account2.getBalance() + "¿ø");
 		
-		account2.withdraw(5000);
-		System.out.println("ÀÜ¾×  = " + account2.getBalance());
+		try {
+			System.out.println("10000¿ø Ãâ±Ý");
+			account2.withdraw(10000);
+			System.out.println("ÀÜ¾×  = " + account2.getBalance() + "¿ø");
+			account2.withdraw(5000);
+			System.out.println("ÀÜ¾×  = " + account2.getBalance());
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		
 	}
 
