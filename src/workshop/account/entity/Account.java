@@ -1,14 +1,15 @@
 package workshop.account.entity;
 
+import workshop.account.exception.InsufficientBalanceException;
+
 public class Account {
 	private String custId;
 	private String acctId;
 	private int balance;
 	
 	//default constructor 선언 (기본 생성자)
-	
 	public Account() {
-		System.out.println("기본생성자");
+		System.out.println("기본생성자 호출");
 	}
 		
 	//Constructor Overloading (생성자 중복 정의)
@@ -18,7 +19,6 @@ public class Account {
 		setCustId(custId);
 		setAcctId(acctId);
 		this.balance = balance;
-		
 		
 	}
 	
@@ -52,8 +52,17 @@ public class Account {
 		this.balance += amount;
 	}
 	//출금
-	public void withdraw(int amount) {
+	public void withdraw(int amount) throws InsufficientBalanceException {
+		
+		if(amount >  this.balance) {
+			String errMessage = String.format("잔액이 부족합니다. (요청 금액 : %d, 현재 잔액 : %d)", amount, balance);
+			//Exception 강제로 발생시킴
+			throw new InsufficientBalanceException(errMessage);
+		}
+		
 		this.balance -= amount;
+	
 	}
+	
 	
 }
