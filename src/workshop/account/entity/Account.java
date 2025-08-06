@@ -5,6 +5,24 @@ public class Account {
 	private String acctId;
 	private int balance;
 	
+	//default constructor 선언 (기본 생성자)
+	
+	public Account() {
+		System.out.println("기본생성자");
+	}
+		
+	//Constructor Overloading (생성자 중복 정의)
+	public Account(String custId, String acctId, int balance) {
+//		this.custId  = custId;
+//		this.acctId  = acctId;
+		setCustId(custId);
+		setAcctId(acctId);
+		this.balance = balance;
+		
+		
+	}
+	
+	
 	public void setBalance(int balance) {
 		this.balance = balance;
 	}
