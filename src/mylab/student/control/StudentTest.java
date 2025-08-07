@@ -14,8 +14,6 @@ public class StudentTest {
 			System.out.println("5학년으로 변경");
 			s1.setGrade(5);
 			
-			s1.printStudentInfo();
-			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
