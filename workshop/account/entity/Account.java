@@ -51,9 +51,9 @@ public class Account {
 	public void deposit(int amount) {
 		this.balance += amount;
 	}
+	
 	//출금
 	public void withdraw(int amount) throws InsufficientBalanceException {
-		
 		if(amount >  this.balance) {
 			String errMessage = String.format("잔액이 부족합니다. (요청 출금 금액 : %d, 현재 잔액 : %d)", amount, balance);
 			//Exception 강제로 발생시킴
